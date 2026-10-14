@@ -21,8 +21,8 @@ zoom a las fichas; en las partidas, el ancho es el del móvil y la cámara está
 más cerca.
 
 **Solo en los vídeos:** la cámara está más cerca (1,5–1,8x; en las
-persecuciones encuadra caballero, dragón y fuego); en el juego está más
-lejos. Los niveles de Jardín, Jardín
+persecuciones encuadra caballero, dragón y fuego; en los `momento_`, sigue al
+caballero en el centro); en el juego está más lejos. Los niveles de Jardín, Jardín
 floral, Montaña nevada y Mina son de exhibición (tamaño de capítulo real,
 hechos con el generador del juego), no capítulos del juego; la Mina se pinta
 con su arte de la Forja, que aún no está en el juego; espinas, avispas, jabalí y
@@ -65,6 +65,9 @@ del juego.
 | [`general/halloween_gargola_tienda.mp4`](general/halloween_gargola_tienda.mp4) | [`halloween_gargola_tienda_sfx.mp4`](general/halloween_gargola_tienda_sfx.mp4) | General | 5.4 s | Halloween: la ficha de la Gárgola en la tienda en primer plano y se equipa | publicado |
 | [`general/saci_perere.mp4`](general/saci_perere.mp4) | [`saci_perere_sfx.mp4`](general/saci_perere_sfx.mp4) | General | 12.0 s | La skin Saci Pererê juega el laberinto del Jardín floral | publicado |
 | [`general/saci_perere_tienda.mp4`](general/saci_perere_tienda.mp4) | [`saci_perere_tienda_sfx.mp4`](general/saci_perere_tienda_sfx.mp4) | General | 5.4 s | La ficha de Saci Pererê en la tienda en primer plano y se equipa | publicado |
+| [`jardin/momento_dragon_persecucion_saci.mp4`](jardin/momento_dragon_persecucion_saci.mp4) | [`momento_dragon_persecucion_saci_sfx.mp4`](jardin/momento_dragon_persecucion_saci_sfx.mp4) | Jardín | 5.0 s | Capítulo 50, skin Saci Pererê: el dragón quema el jardín a dos casillas del caballero y él escapa por poco | publicado |
+| [`jardin/momento_dragon_persecucion_esqueleto.mp4`](jardin/momento_dragon_persecucion_esqueleto.mp4) | [`momento_dragon_persecucion_esqueleto_sfx.mp4`](jardin/momento_dragon_persecucion_esqueleto_sfx.mp4) | Jardín | 5.0 s | Capítulo 50, skin Esqueleto: el dragón quema el jardín a dos casillas del caballero y él escapa por poco | publicado |
+| [`jardin/momento_dragon_persecucion_gargola.mp4`](jardin/momento_dragon_persecucion_gargola.mp4) | [`momento_dragon_persecucion_gargola_sfx.mp4`](jardin/momento_dragon_persecucion_gargola_sfx.mp4) | Jardín | 5.0 s | Capítulo 50, skin Gárgola: el dragón quema el jardín a dos casillas del caballero y él escapa por poco | publicado |
 
 ## Música
 
