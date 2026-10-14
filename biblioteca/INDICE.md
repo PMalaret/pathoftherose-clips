@@ -1,0 +1,91 @@
+# Biblioteca de clips · Path of the Rose
+
+Clips verticales 1080×1920 a 60 fps, H.264 + AAC, con la música y los efectos
+del propio juego. Grabados fotograma a fotograma con el modo Movie Maker de
+Godot y una secuencia de swipes guionizada: se pueden volver a generar
+exactamente iguales.
+
+**Estado:** «publicado» = todo lo que sale está en la versión publicada del
+juego; «próximamente» = sale algo que aún no está (úsalo solo como adelanto,
+con «Próximamente» en pantalla). Al regenerar la biblioteca el estado de cada
+clip se conserva: cuando algo se publique, basta con cambiarlo aquí.
+
+Cada clip tiene también su versión **solo efectos** (`_sfx`): la misma imagen
+y los mismos sonidos del juego, sin música, para montarle otra pista del
+juego (sección «Música», al final).
+
+**Escala:** se graba como en un móvil Android actual de gama media (1080×2400,
+20:9): el juego deja el ancho en 640 unidades y el alto que sobra se lo da a la
+interfaz. La tienda se pinta en ese móvil virtual y la cámara del vídeo hace
+zoom a las fichas; en las partidas, el ancho es el del móvil y la cámara está
+más cerca.
+
+**Solo en los vídeos:** la cámara está más cerca (1,5–1,8x; en las
+persecuciones encuadra caballero, dragón y fuego); en el juego está más
+lejos. Los niveles de Jardín, Jardín
+floral, Montaña nevada y Mina son de exhibición (tamaño de capítulo real,
+hechos con el generador del juego), no capítulos del juego; la Mina se pinta
+con su arte de la Forja, que aún no está en el juego; espinas, avispas, jabalí y
+cuervo salen de los capítulos publicados 17, 13, 12 y 15, y los recorridos sin
+dragón son los capítulos publicados 30 (Jardín) y 23 (Jardín floral). En la
+tienda no se ve el deslizamiento lateral de la primera vez que se abre.
+
+Se regeneran todos con `tools/clips/make_clips.sh --push` en el repositorio
+del juego.
+
+| Archivo | Solo efectos | Mapa | Duración | Qué se ve | Estado |
+|---|---|---|---|---|---|
+| [`jardin/jardin_dragon.mp4`](jardin/jardin_dragon.mp4) | [`jardin_dragon_sfx.mp4`](jardin/jardin_dragon_sfx.mp4) | Jardín | 10.0 s | El dragón persigue al caballero y quema el mapa en V detrás de él (caballero, dragón y fuego en cuadro) | publicado |
+| [`jardin/jardin_atajo.mp4`](jardin/jardin_atajo.mp4) | [`jardin_atajo_sfx.mp4`](jardin/jardin_atajo_sfx.mp4) | Jardín | 5.3 s | Giro en marcha sin detenerse que entra en el bolsillo de una rosa y la recoge | publicado |
+| [`jardin/jardin_victoria.mp4`](jardin/jardin_victoria.mp4) | [`jardin_victoria_sfx.mp4`](jardin/jardin_victoria_sfx.mp4) | Jardín | 9.5 s | Final de la partida y victoria con 3/3 rosas: el pergamino de victoria y el destello dorado | publicado |
+| [`jardin/jardin_recorrido.mp4`](jardin/jardin_recorrido.mp4) | [`jardin_recorrido_sfx.mp4`](jardin/jardin_recorrido_sfx.mp4) | Jardín | 26.6 s | Partida completa de principio a fin, jugando bien, con las 3 rosas (fondo de vídeo) | publicado |
+| [`jardin/jardin_recorrido_sin_dragon.mp4`](jardin/jardin_recorrido_sin_dragon.mp4) | [`jardin_recorrido_sin_dragon_sfx.mp4`](jardin/jardin_recorrido_sin_dragon_sfx.mp4) | Jardín | 30.0 s | Capítulo 30 del juego (Jardín, sin dragón) completo, jugando bien, con las 3 rosas | publicado |
+| [`floral/floral_dragon.mp4`](floral/floral_dragon.mp4) | [`floral_dragon_sfx.mp4`](floral/floral_dragon_sfx.mp4) | Jardín floral | 9.8 s | El dragón persigue al caballero y quema el mapa en V detrás de él (caballero, dragón y fuego en cuadro) | publicado |
+| [`floral/floral_atajo.mp4`](floral/floral_atajo.mp4) | [`floral_atajo_sfx.mp4`](floral/floral_atajo_sfx.mp4) | Jardín floral | 5.3 s | Giro en marcha sin detenerse que entra en el bolsillo de una rosa y la recoge | publicado |
+| [`floral/floral_victoria.mp4`](floral/floral_victoria.mp4) | [`floral_victoria_sfx.mp4`](floral/floral_victoria_sfx.mp4) | Jardín floral | 9.5 s | Final de la partida y victoria con 3/3 rosas: el pergamino de victoria y el destello dorado | publicado |
+| [`floral/floral_recorrido.mp4`](floral/floral_recorrido.mp4) | [`floral_recorrido_sfx.mp4`](floral/floral_recorrido_sfx.mp4) | Jardín floral | 22.6 s | Partida completa de principio a fin, jugando bien, con las 3 rosas (fondo de vídeo) | publicado |
+| [`floral/floral_recorrido_sin_dragon.mp4`](floral/floral_recorrido_sin_dragon.mp4) | [`floral_recorrido_sin_dragon_sfx.mp4`](floral/floral_recorrido_sin_dragon_sfx.mp4) | Jardín floral | 27.3 s | Capítulo 23 del juego (Jardín floral, sin dragón) completo, jugando bien, con las 3 rosas | publicado |
+| [`nieve/nieve_dragon.mp4`](nieve/nieve_dragon.mp4) | [`nieve_dragon_sfx.mp4`](nieve/nieve_dragon_sfx.mp4) | Montaña nevada | 10.0 s | El dragón persigue al caballero y quema el mapa en V detrás de él (caballero, dragón y fuego en cuadro) | próximamente |
+| [`nieve/nieve_atajo.mp4`](nieve/nieve_atajo.mp4) | [`nieve_atajo_sfx.mp4`](nieve/nieve_atajo_sfx.mp4) | Montaña nevada | 5.3 s | Giro en marcha sin detenerse que entra en el bolsillo de una rosa y la recoge | próximamente |
+| [`nieve/nieve_victoria.mp4`](nieve/nieve_victoria.mp4) | [`nieve_victoria_sfx.mp4`](nieve/nieve_victoria_sfx.mp4) | Montaña nevada | 9.5 s | Final de la partida y victoria con 3/3 rosas: el pergamino de victoria y el destello dorado | próximamente |
+| [`nieve/nieve_recorrido.mp4`](nieve/nieve_recorrido.mp4) | [`nieve_recorrido_sfx.mp4`](nieve/nieve_recorrido_sfx.mp4) | Montaña nevada | 26.7 s | Partida completa de principio a fin, jugando bien, con las 3 rosas (fondo de vídeo) | próximamente |
+| [`mina/mina_dragon.mp4`](mina/mina_dragon.mp4) | [`mina_dragon_sfx.mp4`](mina/mina_dragon_sfx.mp4) | Mina | 10.0 s | El dragón persigue al caballero y quema el mapa en V detrás de él (caballero, dragón y fuego en cuadro) | próximamente |
+| [`mina/mina_atajo.mp4`](mina/mina_atajo.mp4) | [`mina_atajo_sfx.mp4`](mina/mina_atajo_sfx.mp4) | Mina | 5.3 s | Giro en marcha sin detenerse que entra en el bolsillo de una rosa y la recoge | próximamente |
+| [`mina/mina_victoria.mp4`](mina/mina_victoria.mp4) | [`mina_victoria_sfx.mp4`](mina/mina_victoria_sfx.mp4) | Mina | 9.5 s | Final de la partida y victoria con 3/3 rosas: el pergamino de victoria y el destello dorado | próximamente |
+| [`mina/mina_recorrido.mp4`](mina/mina_recorrido.mp4) | [`mina_recorrido_sfx.mp4`](mina/mina_recorrido_sfx.mp4) | Mina | 25.7 s | Partida completa de principio a fin, jugando bien, con las 3 rosas (fondo de vídeo) | próximamente |
+| [`general/peligro_espinas.mp4`](general/peligro_espinas.mp4) | [`peligro_espinas_sfx.mp4`](general/peligro_espinas_sfx.mp4) | General | 6.0 s | Espinas (capítulo 17): el caballero cruza entre trampas de espinas que salen y se esconden | publicado |
+| [`general/peligro_avispas.mp4`](general/peligro_avispas.mp4) | [`peligro_avispas_sfx.mp4`](general/peligro_avispas_sfx.mp4) | General | 6.0 s | Avispas (capítulo 13, el Avispero): pasa junto a las avispas que patrullan | publicado |
+| [`general/peligro_jabali.mp4`](general/peligro_jabali.mp4) | [`peligro_jabali_sfx.mp4`](general/peligro_jabali_sfx.mp4) | General | 5.4 s | Jabalí (capítulo 12): el jabalí embiste por su carril | publicado |
+| [`general/peligro_cuervo.mp4`](general/peligro_cuervo.mp4) | [`peligro_cuervo_sfx.mp4`](general/peligro_cuervo_sfx.mp4) | General | 5.4 s | Cuervo ladrón (capítulo 15): roba una rosa, la lleva a su nido y el caballero la recupera | publicado |
+| [`general/mapa_desbloqueo.mp4`](general/mapa_desbloqueo.mp4) | [`mapa_desbloqueo_sfx.mp4`](general/mapa_desbloqueo_sfx.mp4) | General | 5.6 s | Mapa de capítulos: se abre el capítulo 8 con la chispa subiendo por el tallo y los pétalos | publicado |
+| [`general/tienda_skins.mp4`](general/tienda_skins.mp4) | [`tienda_skins_sfx.mp4`](general/tienda_skins_sfx.mp4) | General | 11.0 s | La tienda como puesto de Sant Jordi, de cerca: dos filas de fichas con sus nombres y se equipan Esqueleto y Gárgola en primer plano | publicado |
+| [`general/halloween_esqueleto.mp4`](general/halloween_esqueleto.mp4) | [`halloween_esqueleto_sfx.mp4`](general/halloween_esqueleto_sfx.mp4) | General | 12.0 s | Halloween: la skin Esqueleto juega el laberinto del Jardín | publicado |
+| [`general/halloween_gargola.mp4`](general/halloween_gargola.mp4) | [`halloween_gargola_sfx.mp4`](general/halloween_gargola_sfx.mp4) | General | 12.0 s | Halloween: la skin Gárgola juega el laberinto del Jardín floral | publicado |
+| [`general/halloween_esqueleto_tienda.mp4`](general/halloween_esqueleto_tienda.mp4) | [`halloween_esqueleto_tienda_sfx.mp4`](general/halloween_esqueleto_tienda_sfx.mp4) | General | 5.4 s | Halloween: la ficha del Esqueleto en la tienda en primer plano y se equipa | publicado |
+| [`general/halloween_gargola_tienda.mp4`](general/halloween_gargola_tienda.mp4) | [`halloween_gargola_tienda_sfx.mp4`](general/halloween_gargola_tienda_sfx.mp4) | General | 5.4 s | Halloween: la ficha de la Gárgola en la tienda en primer plano y se equipa | publicado |
+| [`general/saci_perere.mp4`](general/saci_perere.mp4) | [`saci_perere_sfx.mp4`](general/saci_perere_sfx.mp4) | General | 12.0 s | La skin Saci Pererê juega el laberinto del Jardín floral | publicado |
+| [`general/saci_perere_tienda.mp4`](general/saci_perere_tienda.mp4) | [`saci_perere_tienda_sfx.mp4`](general/saci_perere_tienda_sfx.mp4) | General | 5.4 s | La ficha de Saci Pererê en la tienda en primer plano y se equipa | publicado |
+
+## Música
+
+Las pistas del juego tal cual suenan en él (OGG Vorbis), para montar sobre
+las versiones `_sfx`. En el juego no hay una música por mapa: todos los
+capítulos sin dragón usan `laberinto.ogg` y todos los que tienen dragón,
+`dragon.ogg`. La victoria es una fanfarria corta, no una pista.
+
+**Atribución obligatoria:** las tres pistas largas son de terceros con
+licencia CC-BY 4.0. Cada vídeo que las use (también los clips normales, que
+llevan la música del juego; no los `_sfx`) debe citarlas en su descripción,
+por ejemplo: «Música: "For the King" de Alexandr Zhelanov (CC-BY 4.0)». Las
+fanfarrias son propias del juego y no hace falta citarlas.
+
+| Archivo | Duración | Qué es | Autoría |
+|---|---|---|---|
+| [`musica/menu_mapa.ogg`](musica/menu_mapa.ogg) | 166,5 s | Menú: mapa de capítulos, tiendas y Ajustes. Intro y bucle desde 31,0 s | «Royal Mischief Waltz», aroldv (OpenGameArt), CC-BY 4.0 |
+| [`musica/laberinto.ogg`](musica/laberinto.ogg) | 206,5 s | Partida en los capítulos SIN dragón, en todos los mapas (Jardín, Jardín floral...). Intro y bucle desde 34,5 s | «For the King», Alexandr Zhelanov (OpenGameArt), CC-BY 4.0 |
+| [`musica/dragon.ogg`](musica/dragon.ogg) | 18,9 s | Partida en los capítulos CON dragón (toda la partida; cuando el dragón se acerca el juego la sube de tono y volumen). Bucle corto: intro y bucle desde 3,7 s | «Heroic Moment», Stefan Grossmann (OpenGameArt), CC-BY 4.0 |
+| [`musica/dragon_60s.ogg`](musica/dragon_60s.ogg) | 60,0 s | La de los capítulos con dragón alargada a 60 s con su propio bucle (para montajes), con salida en fundido | «Heroic Moment», Stefan Grossmann (OpenGameArt), CC-BY 4.0 |
+| [`musica/victoria.ogg`](musica/victoria.ogg) | 3,1 s | Fanfarria de victoria (laúd y campanas) al llegar al pergamino | Propia de Path of the Rose |
+| [`musica/victoria_perfecta.ogg`](musica/victoria_perfecta.ogg) | 2,0 s | Acorde dorado de la victoria con 3/3 rosas | Propia de Path of the Rose |
+| [`musica/desbloqueo.ogg`](musica/desbloqueo.ogg) | 2,2 s | Arpa del mapa al abrirse un capítulo nuevo | Propia de Path of the Rose |
+| [`musica/derrota.ogg`](musica/derrota.ogg) | 3,0 s | Laúd descendente de la derrota | Propia de Path of the Rose |
