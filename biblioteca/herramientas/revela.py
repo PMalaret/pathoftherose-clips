@@ -24,6 +24,7 @@ ap.add_argument('--tienda', required=True); ap.add_argument('--equipa', type=flo
 ap.add_argument('--intriga', required=True); ap.add_argument('--nombre', required=True)
 ap.add_argument('--sub', default=''); ap.add_argument('--salida', required=True)
 ap.add_argument('--caja', default='272,560,790,1112')
+ap.add_argument('--arte', default='', help='PNG transparente de la skin (biblioteca/marca/skins/<skin>.png). Recomendado: sale más nítido que el recorte.')
 A_ = ap.parse_args()
 TEASER, NAME, SUB = A_.intriga, A_.nombre, A_.sub
 W, H = 1080, 1920
@@ -60,6 +61,13 @@ bb = m.getbbox(); cut = cut.crop(bb)
 cut_p = A_.salida.rsplit('.', 1)[0] + '_recorte.png'
 prev = Image.new('RGBA', cut.size, (40, 90, 40, 255)); prev.alpha_composite(cut); prev.convert('RGB').save(cut_p)
 CUT_CY0 = box[1] + (bb[1] + bb[3]) / 2
+ART_K = 1.0
+if A_.arte:
+    # dibujo original: mismo tamaño y posición que en la carta, guardado a la escala máxima (x1,85)
+    ART_K = 1.85
+    art = Image.open(A_.arte).convert('RGBA'); art = art.crop(art.getbbox())
+    th = int(cut.height * ART_K)
+    cut = art.resize((max(1, int(art.width * th / art.height)), th), Image.LANCZOS)
 
 def eo(t): t = min(max(t, 0), 1); return 1 - (1 - t) ** 3
 def eob(t, s=2.2): t = min(max(t, 0), 1) - 1; return t*t*((s+1)*t+s) + 1
@@ -89,16 +97,16 @@ T_NAME = text_img(NAME, 118, 10)
 T_SUB = text_img(SUB, 62, 7) if SUB else None
 
 # --- personaje recortado con contorno blanco y brillo ---
-pad = 50
+pad = int(50 * ART_K)
 C = Image.new('RGBA', (cut.width+2*pad, cut.height+2*pad), (0, 0, 0, 0))
 a = Image.new('L', C.size, 0); a.paste(cut.split()[3], (pad, pad))
-outline = a.filter(ImageFilter.MaxFilter(13))
-glow = a.filter(ImageFilter.MaxFilter(21)).filter(ImageFilter.GaussianBlur(16))
+outline = a.filter(ImageFilter.MaxFilter(2 * round(6 * ART_K) + 1))
+glow = a.filter(ImageFilter.MaxFilter(2 * round(10 * ART_K) + 1)).filter(ImageFilter.GaussianBlur(16 * ART_K))
 C.paste(Image.new('RGBA', C.size, (255, 214, 120, 255)), (0, 0), glow)
 C.paste(Image.new('RGBA', C.size, (255, 250, 235, 255)), (0, 0), outline)
 C.alpha_composite(cut, (pad, pad))
 SH = Image.new('RGBA', C.size, (0, 0, 0, 0))
-SH.paste(Image.new('RGBA', C.size, (0, 0, 0, 255)), (0, 0), outline.filter(ImageFilter.GaussianBlur(18)).point(lambda v: int(v*0.6)))
+SH.paste(Image.new('RGBA', C.size, (0, 0, 0, 255)), (0, 0), outline.filter(ImageFilter.GaussianBlur(18 * ART_K)).point(lambda v: int(v*0.6)))
 
 # --- fondo de la parte B: la carta equipada, oscurecida ---
 card = Image.open(card_p).convert('RGB')
@@ -156,8 +164,8 @@ for f in range(N):
         s = 1.0 + 0.85*eob(t/0.3)
         bob = 8*math.sin(t*9) if t > 0.3 else 0
         rot = 6*math.sin(t*7)*min(1, t/0.3)
-        Cs = scaled(C, s).rotate(rot, resample=Image.BICUBIC, expand=True)
-        Ss = scaled(SH, s).rotate(rot, resample=Image.BICUBIC, expand=True)
+        Cs = scaled(C, s / ART_K).rotate(rot, resample=Image.BICUBIC, expand=True)
+        Ss = scaled(SH, s / ART_K).rotate(rot, resample=Image.BICUBIC, expand=True)
         put_center(fr, Ss, CX + 14, cy + 30 + bob, 0.8)
         put_center(fr, Cs, CX, cy + bob)
         # remolino (delante) y hojas
