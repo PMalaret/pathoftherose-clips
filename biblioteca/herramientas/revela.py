@@ -50,10 +50,10 @@ lab, n = ndimage.label(cream)
 border = set(np.unique(np.concatenate([lab[0], lab[-1], lab[:, 0], lab[:, -1]]))) - {0}
 bg = np.isin(lab, list(border))
 sat = a.max(-1) - a.min(-1)
-shadow = (np.arange(h)[:, None] > h - 45) & (sat < 70) & (r_ > 150)
+shadow = (np.arange(h)[:, None] > h - 40) & (sat < 60) & (r_ > 185) & (g_ > 170)
 fg = ndimage.binary_opening(~bg & ~shadow, iterations=1)
 lab2, n2 = ndimage.label(fg); sizes = ndimage.sum(fg, lab2, range(1, n2 + 1))
-fg = np.isin(lab2, [i + 1 for i, s in enumerate(sizes) if s > 3000])
+fg = np.isin(lab2, [i + 1 for i, s in enumerate(sizes) if s > max(3000, 0.05 * sizes.max())])
 m = Image.fromarray((fg * 255).astype('uint8')).filter(ImageFilter.GaussianBlur(1))
 cut = im.convert('RGBA'); cut.putalpha(m)
 bb = m.getbbox(); cut = cut.crop(bb)
@@ -64,8 +64,10 @@ CUT_CY0 = box[1] + (bb[1] + bb[3]) / 2
 def eo(t): t = min(max(t, 0), 1); return 1 - (1 - t) ** 3
 def eob(t, s=2.2): t = min(max(t, 0), 1) - 1; return t*t*((s+1)*t+s) + 1
 
-def text_img(txt, size, stroke=9):
+def text_img(txt, size, stroke=9, maxw=1000):
     f = ImageFont.truetype(FONT, size)
+    while f.getbbox(txt, stroke_width=stroke)[2] > maxw and size > 40:
+        size -= 2; f = ImageFont.truetype(FONT, size)
     bb = f.getbbox(txt, stroke_width=stroke)
     im = Image.new('RGBA', (bb[2]-bb[0]+60, bb[3]-bb[1]+70), (0, 0, 0, 0))
     sh = Image.new('RGBA', im.size, (0, 0, 0, 0))
