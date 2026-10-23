@@ -25,3 +25,6 @@ Dibujo original de cada skin, el mismo de su ficha en la tienda del juego. PNG c
 - `skins/rara_jonggrang.png`: Rara Jonggrang — `assets/player/rara_jonggrang.png` — 754 × 1024 px.
 - `skins/gargola.png`: Gárgola — `assets/player/gargola.png` — 968 × 1024 px.
 - `skins/saci_perere.png`: Saci Pererê — `assets/player/saci_perere.png` — 962 × 1024 px.
+- `skins/sir_batistan.png`: Sir Batistan — `assets/player/sir_batistan.png` — 803 × 1024 px.
+- `skins/vesper.png`: Vesper — `assets/player/vesper.png` — 892 × 1024 px.
+- `skins/khufu.png`: Khufu — `assets/player/khufu.png` — 978 × 1024 px.
