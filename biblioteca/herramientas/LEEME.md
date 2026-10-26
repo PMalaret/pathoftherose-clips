@@ -1,6 +1,24 @@
 # Herramientas de montaje
 
-Estilo aprobado por el autor el 15/10/2026 (vídeo del Saci Pererê). Úsalo en todos los vídeos.
+## Estilo vigente (aprobado por el autor el 26/10/2026)
+
+Úsalo en todos los vídeos. Sustituye al estilo del 15/10 (más abajo, solo como referencia).
+
+**Estructura (unos 10,5 s):** 3 planos de acción → final integrado.
+1. **Acción desde el primer fotograma.** Nada de logo ni intro al principio: el primer fotograma ya es un personaje moviéndose por el mapa, con su título visible.
+2. **3 planos de 4 tiempos** (2,18 s a 110 BPM), cortes secos en el tiempo, **a velocidad real** (sin x1,35 ni estela). Solo clips `momento_` de capítulos altos (30 o más); nunca niveles iniciales ni recorridos con el personaje pequeño. La persecución del dragón del capítulo 50 con la Castañera es sosa: no la uses (la del capítulo 32 sí).
+3. **Cada vídeo de la semana abre en un mapa distinto** (capítulo distinto) y, dentro del vídeo, evita dos planos seguidos del mismo mapa.
+4. **Un título por plano**, desde su primer fotograma: Cinzel 900 dorado `#F3D98E` con borde `#2A1408`, arriba (y = 200 y la segunda línea debajo), 1-2 líneas que quepan en 940 px. Con el nombre de lo que se ve (skin o peligro), con el término exacto del glosario: «¡CORRE, GÁRGOLA!», «¡CUIDADO, ESQUELETO!», «¡AL LADRÓN!».
+5. **Final integrado** `../marca/final_<idioma>.mp4` (4,2 s), con fundido de 0,3 s desde la acción: el icono se enciende a oscuras (camino dorado, rosa, ojo del dragón), se transforma en el medallón (cuadrado → círculo) mientras amanece el fondo del jardín, y entran el logo, «¡JUEGA YA!» y la insignia de Google Play. Aguanta hasta el último fotograma.
+6. **Música del juego** (nunca de fuera): por defecto `dragon_60s.ogg` desde 3,65 s a 110 BPM; `laberinto.ogg` si no sale el dragón. Los sonidos del juego (versión `_sfx` de los clips) van debajo al 45 %. Cita CC-BY en la descripción.
+
+**Herramienta:** `montar_acciones.py <spec.json> <salida.mp4>` hace todo el montaje (el formato del spec está al principio del script). Tipos de plano: `d` persecución (encuadre entero), `m` momento (zoom 1,1 arriba), `t` tienda.
+
+**Archivos del final integrado:** `icono_fin.py` → `../marca/icono_fin.mp4` (icono encendiéndose) y `final_animado.py <idioma> ../marca/icono_fin.mp4 ../marca/final_<idioma>.mp4`. Ya están generados en los 5 idiomas (es, ca, en, pt-BR, id); solo hay que regenerarlos si cambia el diseño.
+
+---
+
+## Estilo anterior (15/10/2026, ya no se usa)
 
 ## Archivos
 - `cierre.py`: genera la pantalla final animada (2,2 s) de un idioma. Ya están generadas en `../marca/cierre_<idioma>.mp4` (es, pt-BR, en, ca, id), con su último fotograma en `.png`. Solo hay que volver a generarlas si cambia el diseño.
