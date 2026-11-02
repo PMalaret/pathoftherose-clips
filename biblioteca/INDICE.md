@@ -136,6 +136,7 @@ fanfarrias son propias del juego y no hace falta citarlas.
 | [`musica/laberinto.ogg`](musica/laberinto.ogg) | 206,5 s | Partida en los capítulos SIN dragón, en todos los mapas (Jardín, Jardín floral...). Intro y bucle desde 34,5 s | «For the King», Alexandr Zhelanov (OpenGameArt), CC-BY 4.0 |
 | [`musica/dragon.ogg`](musica/dragon.ogg) | 18,9 s | Partida en los capítulos CON dragón (toda la partida; cuando el dragón se acerca el juego la sube de tono y volumen). Bucle corto: intro y bucle desde 3,7 s | «Heroic Moment», Stefan Grossmann (OpenGameArt), CC-BY 4.0 |
 | [`musica/dragon_60s.ogg`](musica/dragon_60s.ogg) | 60,0 s | La de los capítulos con dragón alargada a 60 s con su propio bucle (para montajes), con salida en fundido | «Heroic Moment», Stefan Grossmann (OpenGameArt), CC-BY 4.0 |
+| [`musica/determined_pursuit.ogg`](musica/determined_pursuit.ogg) | 111,0 s | Música externa para montajes (no está en el juego): orquesta épica de persecución, 160 BPM; la orquesta entra a tope en 19,43 s | «Determined Pursuit (Epic Orchestra Loop)», Emma_MA (OpenGameArt), CC0 (dominio público, no hace falta citarla) |
 | [`musica/victoria.ogg`](musica/victoria.ogg) | 3,1 s | Fanfarria de victoria (laúd y campanas) al llegar al pergamino | Propia de Path of the Rose |
 | [`musica/victoria_perfecta.ogg`](musica/victoria_perfecta.ogg) | 2,0 s | Acorde dorado de la victoria con 3/3 rosas | Propia de Path of the Rose |
 | [`musica/desbloqueo.ogg`](musica/desbloqueo.ogg) | 2,2 s | Arpa del mapa al abrirse un capítulo nuevo | Propia de Path of the Rose |
